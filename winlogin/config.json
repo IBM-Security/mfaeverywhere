@@ -1,0 +1,22 @@
+{
+    "ibm-auth-api":{
+        /*IBM Security Verify tenant API Client and connection details. */
+        "client-id":"xxxx",
+        /* See obfuscate.exe tool to obfuscate "client-secret". */
+        "obf-client-secret":"xxxx",
+        "protocol":"https",
+        "host":"xxxx.verify.ibm.com",
+        "port":443,
+        "max-handles":16
+    },
+    "credential-provider":{
+        /* Windows Logon behavior */
+        "trace-file":"c:/credprov.log",
+        "username-format":"%U",
+        "disable-builtin-password-logon": false,
+        "rdp-only": false,
+		"no-mfa-account": "IBM\\Administrator",
+        "auth-method":"winpwd-then-choice-then-otp",
+        "choices":["device","transient","totp","smsotp","emailotp", "voiceotp"]
+    }
+}

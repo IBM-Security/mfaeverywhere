@@ -1,0 +1,61 @@
+{
+    "address":"::",
+    "port":1812,
+    "trace-file":"c:/ibm-auth-api.log",
+    "ibm-auth-api":{
+        "client-id":"xxxx",
+        "obf-client-secret":"xxxx", /* See IbmRadius -obf */
+        "protocol":"https",
+        "host":"xxxx.verify.ibm.com",
+        "port":443,
+        "max-handles":16
+    },
+    "clients":[
+        {
+			"address": "10.80.80.0",
+			"mask": "255.255.255.0",
+			"auth-method": "password-and-device",
+			"name": "OpenVPN",
+			"use-external-ldap": false,
+			"use-local-pwd-check": true,
+			"local-domain": "IBM",
+			"secret": "Passw0rd",
+			"reject-on-missing-auth-method": true,
+			"device-prompt": "A push notification has been sent to your device: [%D].",
+			"poll-device": true,
+			"poll-timeout": 60
+}
+    ],
+    "policy":[
+        {
+            "name":"policy1",
+            /*
+            "match":{
+                "apply-before-authenticate":false,
+                "client-ip":"172.16.99.46",
+                "attr":{
+                    "case-ignore":true,
+                    "compare":"=",
+                    "name":"User-Name",
+                    "value":"Administrator3"
+                },
+		"user-group":{
+                    "compare":"=",
+                    "name":"vpnusers"
+		}
+            },
+            */
+            "return-attrs":[
+                {
+                    "name":"Class",
+                    "value":"{{group-name}}"
+                },
+                {
+                    "name":"Service-Type",
+                    "value": "Login"
+                }
+            ],
+            "action":"continue"
+        }
+    ]
+}
