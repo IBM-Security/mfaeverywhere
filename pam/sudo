@@ -1,0 +1,5 @@
+#%PAM-1.0
+auth       include      isv-auth-device
+account    include      system-auth
+password   include      system-auth
+session    include      system-auth

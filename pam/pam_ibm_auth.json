@@ -1,0 +1,17 @@
+{
+    "ibm-auth-api":{
+        "client-id":"xxxx",
+        "obf-client-secret":"xxxx", /* Use /opt/ibm/ibm_auth/ibm_authd[_64] --obf <secret> */
+        "protocol":"https",
+        "host":"xxxx.verify.ibm.com",
+        "port":"443",
+        "max-handles":"16"
+    },
+    "ibm-authd":{
+        "trace-file":"/tmp/ibm_authd.log"
+    },
+    "pam":{
+        "trace-file":"/tmp/pam_ibm_auth.log"
+    }
+}
+
