@@ -1,8 +1,0 @@
-
-checkmodule -M -m -o pamverify.mod pamverify.te
-
-semodule_package -o pamverify.pp -m pamverify.mod
-
-semodule -i pamverify.pp
-
-

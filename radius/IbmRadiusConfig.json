@@ -12,16 +12,14 @@
     },
     "clients":[
         {
+			"name": "OpenVPN",
 			"address": "10.80.80.0",
 			"mask": "255.255.255.0",
+			"secret": "Passw0rd",
 			"auth-method": "password-and-device",
-			"name": "OpenVPN",
-			"use-external-ldap": false,
 			"use-local-pwd-check": true,
 			"local-domain": "IBM",
-			"secret": "Passw0rd",
 			"reject-on-missing-auth-method": true,
-			"device-prompt": "A push notification has been sent to your device: [%D].",
 			"poll-device": true,
 			"poll-timeout": 60
 }
